@@ -720,16 +720,11 @@ table {
   padding: 0 10px;
 }
 #contacto__comunidad h2 {
+  font-size: calc(28px + 0.5vw);
   text-align: center;
 }
 #contacto__comunidad h2 span {
   text-shadow: 3px 2px 2px #000000;
-}
-#contacto__comunidad ul {
-  display: flex;
-  flex-direction: column;
-  color: #FFFFFF;
-  list-style: none;
 }
 
 #iconos--contenedor {
@@ -813,6 +808,7 @@ legend {
 }
 
 label {
+  font-weight: bold;
   text-align: center;
 }
 

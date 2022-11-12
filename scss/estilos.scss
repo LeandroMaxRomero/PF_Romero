@@ -588,15 +588,11 @@ table{
     @include col-flex;
     padding: 0 10px;
     h2{
-    text-align: center;
-        span{
-            text-shadow: 3px 2px 2px $negro;
-        }
-    }
-    ul{
-        @include col-flex;
-        color: $blanco;
-        list-style: none;
+        font-size: calc(28px + .5vw);
+        text-align: center;
+            span{
+                text-shadow: 3px 2px 2px $negro;
+            }
     }
 }
 
@@ -672,7 +668,8 @@ legend{
     @include col-flex;
     margin-bottom: 10px;
 }
-label{     
+label{    
+    font-weight: bold; 
     text-align: center;
 }
 input, textarea{
