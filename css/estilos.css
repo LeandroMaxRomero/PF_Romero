@@ -1,0 +1,865 @@
+@charset "UTF-8";
+/* Fuentes */
+/* Paleta de colores */
+/* Map colores background modos de juego*/
+/* Map colores background de botones - menú de personajes */
+/* Map colores letra de botones - menú personajes */
+/* Map colores cards personajes por categoría */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ==> ==> Tipografía <== <== */
+h1 {
+  font-family: "Silkscreen", "Arial Narrow Bold";
+  font-size: calc(14px + 1vw);
+  color: #000000;
+  text-shadow: none;
+}
+
+h2 {
+  font-family: "Nougat", "Lilita One", sans-serif;
+  font-size: 28px;
+  color: #FEEF00;
+  text-shadow: 3px 2px 2px #D40C00;
+}
+
+h3 {
+  font-family: "Lilita One", sans-serif, Verdana;
+  font-size: 24px;
+  color: #FF5500;
+  text-shadow: 0.5px 1px 1px #FEEF00;
+}
+
+p {
+  font-family: "Krub", sans-serif;
+  font-size: calc(14px + 0.25vw);
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* ==> ==>  MAIN  <== <==  */
+main {
+  background-color: #000000;
+  padding: 15px 0 0 0;
+}
+
+/*  ==> ==>  HEADER  <== <==  */
+header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-image: url("../IMG/header/fondo-bs.webp");
+  position: sticky;
+  z-index: 10;
+  top: 0px;
+}
+
+#encabezado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#encabezado img {
+  width: calc(50px + 2vw);
+}
+
+.tipografiaBrawl {
+  font-family: "Nougat", "Lilita One", sans-serif;
+  color: #FFFFFF;
+  text-shadow: 3px 2px 2px #000000;
+}
+
+.tipografiaStars {
+  font-family: "Nougat", "Lilita One", sans-serif;
+  color: #D40C00;
+  text-shadow: 3px 2px 2px #000000;
+}
+
+/* Menú desplegable utilizando dropdown de Bootstrap */
+.dropdown-center {
+  display: flex;
+  justify-content: center;
+}
+.dropdown-center .btn-info {
+  background-color: #00BCD9;
+}
+.dropdown-center h3 {
+  color: #D40C00;
+  font-size: 20px;
+}
+
+.dropdown-menu {
+  background-color: #00BCD9;
+}
+
+.dropdown-item:hover {
+  background-color: #00A5F9;
+}
+.dropdown-item h3 {
+  color: #FEEF00;
+  text-shadow: 1px 2px 2px #910f09;
+  font-size: 18px;
+}
+
+.activo {
+  background-color: #D40C00;
+}
+
+/* ↓ Oculto el navegador con propiedad "display:none" mientras se visualiza el dropdown */
+nav {
+  display: none;
+}
+
+/* Barra de navegación vertical y horizontal */
+@media screen and (min-width: 480px) {
+  /* ↓ Oculto el dropdown con propiedad "display:none" mientras se visualiza el navegador */
+  .dropdown-center {
+    display: none;
+  }
+  #encabezado {
+    flex-direction: column-reverse;
+  }
+  #encabezado img {
+    width: calc(60px + 3vw);
+  }
+  #encabezado h1 {
+    font-size: calc(16px + 1.5vw);
+  }
+  /* Aparece el nav cambiando su "display: none" --> "display:flex" */
+  nav {
+    display: flex;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    padding-bottom: 0.5%;
+    margin: 0;
+    line-height: 140%;
+  }
+  nav li {
+    font-family: "Nougat", "Lilita One", sans-serif;
+    color: #FFFFFF;
+    text-shadow: 2px 1px 2px #000000;
+    font-size: calc(8px + 2vw);
+  }
+  nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  nav a:hover {
+    color: #EC4C32;
+  }
+  .menu-seleccionado {
+    color: #FEEF00;
+    text-shadow: 2px 1px 2px #D40C00;
+  }
+}
+@media screen and (min-width: 768px) {
+  #encabezado {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  #encabezado img {
+    width: calc(100px + 4vw);
+  }
+  #encabezado h1 {
+    font-size: calc(20px + 1.5vw);
+  }
+  nav ul {
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+  }
+  nav li a {
+    font-size: calc(12px + 1.2vw);
+  }
+  nav li:hover {
+    transform: scale(1.2, 1.2);
+  }
+}
+/* ==> ==>  FOOTER  <== <==  */
+footer {
+  background-image: url("../IMG/footer/fondo-bs-footer.webp");
+  background-size: cover;
+  padding-bottom: 0.25%;
+  display: grid;
+  grid-template-areas: "A1 A3" "A2 A3";
+}
+
+#siguenos {
+  grid-area: A1;
+  font-family: "Lilita One", sans-serif, Verdana;
+  font-size: 12px;
+  text-align: center;
+  color: #FFCD00;
+  text-shadow: 2px 1px 2px #FF5500;
+  align-self: center;
+  justify-self: center;
+}
+
+#logo-redes {
+  grid-area: A2;
+  display: flex;
+  justify-content: space-evenly;
+}
+#logo-redes img {
+  height: 30px;
+}
+#logo-redes img:hover {
+  transform: scale(1.2, 1.2);
+}
+
+#links-footer {
+  grid-area: A3;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#links-footer a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+#links-footer a:hover {
+  transform: scale(1.1, 1.1);
+}
+#links-footer #dev_link {
+  color: #FF5500;
+  font-style: italic;
+}
+
+@media screen and (min-width: 480px) {
+  footer {
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas: "A1 A2" "A3 A3";
+  }
+  #siguenos {
+    font-size: 14px;
+    text-align: right;
+  }
+  #logo-redes {
+    justify-content: space-evenly;
+    column-gap: calc(15px + 4vw);
+  }
+  #links-footer {
+    font-size: 14px;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  #siguenos {
+    font-size: 18px;
+    text-align: center;
+  }
+  #logo-redes {
+    justify-content: space-around;
+  }
+  #logo-redes img {
+    height: 35px;
+  }
+  #links-footer {
+    font-size: 16px;
+  }
+}
+/* ==> ==>  PÁGINA: INDEX  <== <==  */
+#main-index {
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor-inicio {
+  padding: 20px 30px;
+  border-bottom: 4px solid #00A5F9;
+}
+.contenedor-inicio h2 {
+  text-align: center;
+}
+.contenedor-inicio h2 span {
+  text-shadow: 3px 2px 2px #5F7D8E;
+}
+.contenedor-inicio img {
+  object-fit: contain;
+  max-width: 100%;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  background-color: #00A5F9;
+  justify-content: space-around;
+}
+
+.contenedor-aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid #000000;
+}
+.contenedor-aside:last-of-type {
+  border: none;
+}
+.contenedor-aside h3 {
+  color: #D40C00;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.contenedor-youtube {
+  max-width: 90%;
+  margin: 5% auto;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .contenedor-inicio {
+    display: grid;
+    grid-template-rows: 0.2fr 2fr 1fr;
+    column-gap: 5px;
+    align-items: center;
+    grid-template-areas: "titulo" "imagen" "parrafo";
+  }
+  .contenedor-inicio:last-of-type {
+    border: none;
+  }
+  .contenedor-inicio h2 {
+    grid-area: titulo;
+  }
+  .contenedor-inicio img {
+    grid-area: imagen;
+    width: 100%;
+  }
+  .contenedor-inicio p {
+    grid-area: parrafo;
+  }
+}
+@media screen and (min-width: 950px) {
+  #main-index {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  .contenedor-inicio {
+    grid-template-rows: 0.2fr 0.75fr 2fr;
+    grid-template-areas: "titulo" "parrafo" "imagen";
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contenedor-inicio {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 0.2fr 2fr;
+    grid-template-areas: "titulo imagen" "parrafo imagen";
+  }
+}
+/*  ==> ==>  PÁGINA: MODOS  <== <== */
+/* Color de fondo de filas de Bootstrap modificados por rareza: Se utilizó each para iterar dentro de un map e interpolar una propiedad por ID. */
+#atrapagemas {
+  background-color: #7F4FC9;
+}
+
+#supervivencia {
+  background-color: #87c735;
+}
+
+#balon_brawl {
+  background-color: #526EFF;
+}
+
+#restringida {
+  background-color: #EC4C32;
+}
+
+#noqueo {
+  background-color: #FF9A00;
+}
+
+#brawloncesto {
+  background-color: #00A5F9;
+}
+
+#voleibrawl {
+  background-color: #32C12C;
+}
+
+#cazadores {
+  background-color: #FFCD00;
+}
+
+#irrupcion {
+  background-color: #D40C00;
+}
+
+#destruccion {
+  background-color: #682CBF;
+}
+
+#agarra_trofeo {
+  background-color: #50342C;
+}
+
+#asedio {
+  background-color: #5F7D8E;
+}
+
+#megabrawl {
+  background-color: #910f09;
+}
+
+#pelea_robotica {
+  background-color: #009888;
+}
+
+#supervivencia p, #noqueo p, #cazadores p, #voleibrawl p {
+  color: #000000;
+}
+
+@media screen and (min-width: 768px) {
+  .tarjetas:hover {
+    cursor: pointer;
+    transform: scale(1.1, 1.1);
+  }
+}
+/* ==> ==>  PÁGINA: PERSONAJES  <== <==  */
+.nav-personajes {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+.nav-personajes img {
+  height: 160px;
+}
+.nav-personajes button {
+  width: calc(300px + 5vw);
+  font-weight: bold;
+}
+
+@media screen and (min-width: 480px) {
+  .nav-personajes img {
+    height: 220px;
+  }
+  .nav-personajes button {
+    width: calc(300px + 10vw);
+  }
+  .nav-personajes a:hover {
+    transform: scale(1.2, 1.1);
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav-personajes {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-items: center;
+    align-items: center;
+  }
+  .nav-personajes img {
+    height: 280px;
+  }
+  .nav-personajes button {
+    width: calc(280px + 10vw);
+  }
+  .nav-personajes a:hover {
+    transform: translate(50px, 0px);
+  }
+}
+/* Color de botones  de Bootstrap modificados por rareza: Se utilizó each para iterar dentro de un map e interpolar una propiedad por ID. */
+.btn-info {
+  background-color: #00A5F9;
+}
+
+.btn-success {
+  background-color: #32C12C;
+}
+
+.btn-primary {
+  background-color: #3E49BB;
+}
+
+.btn-secondary {
+  background-color: #682CBF;
+}
+
+.btn-danger {
+  background-color: #D40C00;
+}
+
+.btn-warning {
+  background-color: #FFCD00;
+}
+
+.btn-dark {
+  background-color: #FF5500;
+}
+
+/* Color de texto de botones de Bootstrap modificados por criterio de diseño: Se utizó each para iterar dentro de un map e interpolar una propiedad por ID. */
+.btn-info {
+  color: #3E49BB !important;
+}
+
+.btn-success {
+  color: #50342C !important;
+}
+
+.btn-primary {
+  color: #00BCD9 !important;
+}
+
+.btn-secondary {
+  color: #9E9E9E !important;
+}
+
+.btn-danger {
+  color: #FF9A00 !important;
+}
+
+.btn-warning {
+  color: #FF5500 !important;
+}
+
+.btn-dark {
+  color: #682CBF !important;
+}
+
+.cartas {
+  justify-content: space-evenly;
+  margin: 0;
+}
+
+/* Color de fondo de filas de Bootstrap modificados por rareza: Se utilizó each para iterar dentro de un map e interpolar una propiedad por ID. */
+#comunes {
+  background-color: #00A5F9;
+}
+
+#especiales {
+  background-color: #32C12C;
+}
+
+#superespeciales {
+  background-color: #3E49BB;
+}
+
+#epicos {
+  background-color: #682CBF;
+}
+
+#miticos {
+  background-color: #D40C00;
+}
+
+#legendarios {
+  background-color: #FFCD00;
+}
+
+#cromaticos {
+  background-color: #FF5500;
+}
+
+/* Propiedades cambiadas de cards de Bootstraps por criterio de diseño */
+#epicos .text-bg-secondary {
+  background-color: #7F4FC9 !important;
+}
+
+#miticos h3 {
+  color: #910f09;
+}
+#miticos h2 {
+  text-shadow: 3px 2px 2px #000000;
+}
+
+#legendarios h2 {
+  color: #FF5500;
+  text-shadow: 3px 2px 2px #910f09;
+}
+#legendarios h3 {
+  text-shadow: 0.5px 1px 1px #000000;
+}
+
+#superespeciales .text-bg-primary {
+  background-color: #526EFF !important;
+}
+
+#cromaticos .text-bg-dark {
+  background-color: #FF9A00 !important;
+}
+
+#comunes p, #legendarios p, #cromaticos p {
+  color: #000000;
+}
+
+/* Botones Bootstrap de retorno al nav-personajes */
+.boton-retorno {
+  grid-template-columns: 100%;
+  justify-content: center;
+  font-size: 14px;
+}
+.boton-retorno .btn {
+  width: 100%;
+}
+
+.btn-light {
+  font-family: "Silkscreen", "Arial Narrow Bold";
+  background-color: #000000;
+  color: #FFFFFF;
+  border: none;
+}
+
+/* ==> ==>  PÁGINA: INFO  <== <== */
+#main-info {
+  background-image: linear-gradient(to right, #000000, #D40C00);
+}
+#main-info h2 {
+  text-align: center;
+}
+
+#info__tabla {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4%;
+}
+
+table {
+  background-color: #EC4C32;
+  border-radius: 14px;
+  margin: 0px 5%;
+  font-size: 18px;
+  box-shadow: 5px 5px 30px #FFCD00;
+}
+
+.titulo-tabla {
+  color: #FFFFFF;
+  text-shadow: 2px 1px 2px #9E9E9E;
+  text-align: right;
+  padding-right: 20px;
+  border-bottom: 2px solid #910f09;
+}
+
+.descripcion-tabla {
+  color: #910f09;
+  padding-left: 20px;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+#info__imagen {
+  display: flex;
+  flex-direction: column;
+}
+
+#faqs--contenedor {
+  margin: auto 5px;
+}
+
+.preguntas p {
+  margin-bottom: 10px !important;
+}
+.preguntas p:last-of-type {
+  margin-bottom: 0 !important;
+}
+
+@media screen and (min-width: 480px) {
+  table {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  #main-info {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-rows: repeat 2, auto;
+    grid-template-areas: "a1 a2" "a3 a3";
+    align-items: center;
+  }
+  #info__tabla {
+    grid-area: a1;
+    margin: 40px 80px;
+    align-content: center;
+  }
+  table {
+    font-size: 22px;
+  }
+  #info__imagen {
+    grid-area: a2;
+  }
+  #info__faqs {
+    grid-area: a3;
+  }
+  #faqs--contenedor {
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
+  .preguntas {
+    margin: 10px auto;
+  }
+}
+/* ==> ==>  PÁGINA: CONTACTO  <== <== */
+#main-contacto {
+  background-image: linear-gradient(to bottom, #682CBF, #EC4C32);
+  padding-bottom: 20px;
+}
+
+#contacto__comunidad {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+#contacto__comunidad h2 {
+  text-align: center;
+}
+#contacto__comunidad h2 span {
+  text-shadow: 3px 2px 2px #000000;
+}
+#contacto__comunidad ul {
+  display: flex;
+  flex-direction: column;
+  color: #FFFFFF;
+  list-style: none;
+}
+
+#iconos--contenedor {
+  display: flex;
+  justify-content: center;
+}
+
+.iconos-ok {
+  max-width: 60px;
+}
+
+#contacto__pictures {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+#contacto__pictures img {
+  width: 100%;
+}
+
+@media screen and (min-width: 480px) {
+  .iconos-ok {
+    max-width: 80px;
+  }
+}
+@media screen and (min-width: 768px) {
+  #main-contacto {
+    display: grid;
+    grid-template-columns: 38% 62%;
+    grid-template-areas: "a1 a2" "a3 a3";
+  }
+  #contacto__comunidad {
+    grid-area: a1;
+    justify-content: space-evenly;
+  }
+  #contacto__pictures {
+    grid-area: a2;
+  }
+  .iconos-ok {
+    max-width: 100px;
+  }
+}
+/* Formulario */
+form {
+  grid-area: a3;
+  background-color: #CDE000;
+  box-shadow: 5px 5px 25px #FFFFFF;
+  margin: auto 20px;
+  border-radius: 20px;
+}
+
+fieldset {
+  color: #682CBF;
+  border: 2px solid #682CBF;
+  border-radius: 20px;
+}
+
+legend {
+  font-size: 20px;
+  text-align: center;
+  color: #FEEF00;
+  background-color: #7F4FC9;
+  text-shadow: 2px 1px 2px #000000;
+  padding: 4px 20px;
+  border: 2px solid #682CBF;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#campos-formulario {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  padding-left: 5%;
+}
+
+.campos {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+label {
+  text-align: center;
+}
+
+input, textarea {
+  border: 2px solid #7F4FC9;
+}
+
+select {
+  border: 2px solid #7F4FC9;
+}
+
+#boton {
+  font-family: "Silkscreen", "Arial Narrow Bold";
+  color: #000000;
+  text-align: center;
+  padding: 10px 30px;
+  border: 2px dashed #000000;
+}
+#boton:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 480px) {
+  form {
+    margin: auto 40px;
+  }
+  label {
+    text-align: left;
+  }
+  #boton {
+    width: 50%;
+    margin-left: 25%;
+  }
+}
+@media screen and (min-width: 768px) {
+  form {
+    margin: auto 100px;
+  }
+  .campos {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  label {
+    padding-left: 20px;
+  }
+  input, textarea {
+    border: 2px solid #7F4FC9;
+  }
+  #boton {
+    width: 25%;
+    margin-left: 75%;
+  }
+}
+
+/*# sourceMappingURL=estilos.css.map */

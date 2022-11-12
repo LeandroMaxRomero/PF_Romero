@@ -1,0 +1,12 @@
+
+@mixin col-flex{
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin tipografia_letra ($fuente_letra, $tamanio_letra, $color_letra, $sombra_letra) {
+    font-family: $fuente_letra;
+    font-size: $tamanio_letra;
+    color: $color_letra;
+    text-shadow: $sombra_letra;
+}

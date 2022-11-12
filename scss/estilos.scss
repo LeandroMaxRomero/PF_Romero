@@ -1,0 +1,721 @@
+@import "partials/variables";
+@import "partials/mixin";
+
+
+*{
+    margin:0;
+    padding: 0;
+}
+
+
+/* ==> ==> Tipografía <== <== */
+h1{
+    @include tipografia_letra($fuente_cuadrada, calc(14px + 1vw), $negro, none);
+}
+h2{
+    @include tipografia_letra( $fuente_titulo, 28px, $amarillo, 3px 2px 2px $rojo);
+}
+h3{
+    @include tipografia_letra( $fuente_subtitulos, 24px, $naranja_oscuro, .5px 1px 1px $amarillo);
+}
+p{
+    @include tipografia_letra( $fuente_parrafos, calc(14px + .25vw), $blanco, none);
+}
+
+
+/* ==> ==>  MAIN  <== <==  */
+main{
+    background-color: $negro;
+    padding: 15px 0 0 0;
+}
+
+
+/*  ==> ==>  HEADER  <== <==  */
+header{
+    @include col-flex;
+    text-align: center;
+    background-image: url("../IMG/header/fondo-bs.webp");
+    position: sticky;
+    z-index: 10;
+    top: 0px;
+}
+#encabezado{
+    @include col-flex;
+    align-items: center;
+    img{
+       width: calc(50px + 2vw);   
+    }
+}
+.tipografiaBrawl{
+    font-family: $fuente_titulo;
+    color: $blanco;
+    text-shadow: 3px 2px 2px $negro;
+}
+.tipografiaStars{
+    font-family: $fuente_titulo;
+    color: $rojo;
+    text-shadow: 3px 2px 2px $negro;
+}
+
+/* Menú desplegable utilizando dropdown de Bootstrap */
+.dropdown-center{
+    display: flex;
+    justify-content: center;
+    .btn-info{
+        background-color: $cyan;
+    }
+    h3{
+        color: $rojo;
+        font-size: 20px;
+        
+    }
+}
+.dropdown-menu{
+    background-color: $cyan;
+}
+.dropdown-item{
+    &:hover{
+        background-color: $azul_claro;
+    }
+    h3{
+        color: $amarillo;
+        text-shadow: 1px 2px 2px $rojo_oscuro;
+        font-size: 18px;
+    }
+}
+.activo{
+    background-color: $rojo;
+}
+/* ↓ Oculto el navegador con propiedad "display:none" mientras se visualiza el dropdown */
+nav{
+    display:none;
+}
+
+/* Barra de navegación vertical y horizontal */
+@media screen and (min-width: 480px) {
+
+/* ↓ Oculto el dropdown con propiedad "display:none" mientras se visualiza el navegador */
+    .dropdown-center{
+        display: none;
+    }
+
+    #encabezado{
+        flex-direction: column-reverse;
+        img{
+            width: calc(60px + 3vw);
+        }
+        h1{
+            font-size: calc(16px + 1.5vw);
+        }
+    }
+
+/* Aparece el nav cambiando su "display: none" --> "display:flex" */    
+    nav {
+        display: flex;
+        ul{
+            @include col-flex;
+            width: 100%;
+            list-style: none;
+            padding: 0;
+            padding-bottom: .5%;
+            margin: 0;
+            line-height: 140%;
+        }
+        li {
+            font-family: $fuente_titulo;
+            color: $blanco;
+            text-shadow: 2px 1px 2px $negro;
+            font-size:calc(8px + 2vw);
+        }
+        a{
+            color: $blanco;
+            text-decoration: none;
+                &:hover {
+                color: $rojo_claro;
+                }
+        }
+    }
+    .menu-seleccionado{
+        color: $amarillo;
+        text-shadow: 2px 1px 2px $rojo;
+    }
+}
+@media screen and (min-width:768px) {
+    #encabezado{
+        flex-direction: row;
+        justify-content: space-evenly;
+        img{
+            width: calc(100px + 4vw);
+        }
+        h1{
+            font-size: calc(20px + 1.5vw);
+        }
+    }
+    nav{
+        ul{
+            flex-direction: row;
+            justify-content: space-evenly;
+            list-style: none;  
+        }
+        li {
+            a{
+               font-size: calc(12px + 1.2vw);
+            }
+            &:hover{
+                transform: scale(1.2, 1.2);
+            }
+        }
+    }
+}
+
+
+/* ==> ==>  FOOTER  <== <==  */
+footer{
+    background-image: url("../IMG/footer/fondo-bs-footer.webp");
+    background-size: cover;
+    padding-bottom: .25%;
+    display: grid;
+    grid-template-areas: "A1 A3"
+                         "A2 A3";
+}
+#siguenos{
+    grid-area: A1;
+    font-family: $fuente_subtitulos;
+    font-size: 12px;
+    text-align: center;
+    color: $ambar;
+    text-shadow: 2px 1px 2px $naranja_oscuro;
+    align-self: center;
+    justify-self: center;
+}
+#logo-redes{
+    grid-area: A2;
+    display: flex;
+    justify-content: space-evenly;
+    img{
+        height: 30px;
+        &:hover{
+        transform: scale(1.2, 1.2);
+        }
+    }
+}
+#links-footer{
+    grid-area: A3;
+    font-size: 12px;
+    @include col-flex;
+    align-items: center;
+    a{
+        color: $blanco;
+        text-decoration: none;
+            &:hover{
+            transform: scale(1.1, 1.1);
+            }
+    }
+    #dev_link{
+        color: $naranja_oscuro;
+        font-style: italic;
+    }
+}
+@media screen and (min-width: 480px){
+    footer{
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-areas: "A1 A2"
+                             "A3 A3";
+    }
+    #siguenos{
+        font-size: 14px;
+        text-align: right;
+    }
+    #logo-redes{
+        justify-content: space-evenly;
+        column-gap: calc(15px + 4vw);
+    }
+    #links-footer{
+        font-size: 14px;
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: center;
+    }
+}
+@media screen and (min-width: 768px){
+    #siguenos{
+        font-size: 18px;
+        text-align: center;
+    }
+    #logo-redes{
+        justify-content: space-around;
+        img{
+            height: 35px;
+        }
+    } 
+    #links-footer{
+        font-size: 16px;
+    }
+}
+
+
+/* ==> ==>  PÁGINA: INDEX  <== <==  */
+#main-index{
+    @include col-flex;
+}
+.contenedor-inicio{
+    padding: 20px 30px;
+    border-bottom: 4px solid $azul_claro;
+    h2{
+        text-align: center;
+        span{
+            text-shadow: 3px 2px 2px $gris_azulado;
+        }
+    }
+    img{
+        object-fit: contain;
+        max-width: 100%;
+    }
+}
+
+aside{
+    @include col-flex;
+    background-color: $azul_claro;
+    justify-content: space-around;
+}
+.contenedor-aside{
+    @include col-flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid $negro;
+    &:last-of-type{
+        border:none;
+    }
+    h3{
+        color: $rojo;
+        text-align: center;
+        padding-top: 10px;
+    }
+}
+.contenedor-youtube{
+    max-width: 90%;
+    margin: 5% auto;
+}
+iframe{
+    max-width: 100%;
+}
+@media screen and (min-width: 768px){
+    .contenedor-inicio{
+        display: grid;
+        grid-template-rows: .2fr 2fr 1fr;
+        column-gap: 5px;
+        align-items: center;
+        grid-template-areas: "titulo"
+                             "imagen"
+                             "parrafo";
+        &:last-of-type{
+            border: none;
+        }
+        h2{
+            grid-area: titulo;
+        }
+        img{
+            grid-area: imagen;
+            width: 100%;
+        }
+        p{
+            grid-area: parrafo;
+        }
+    }
+}
+@media screen and (min-width: 950px){
+    #main-index{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+    .contenedor-inicio{
+        grid-template-rows: .2fr .75fr 2fr;
+        grid-template-areas: "titulo"
+                             "parrafo"
+                             "imagen";
+    }
+}
+@media screen and (min-width: 1200px){
+    .contenedor-inicio{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: .2fr 2fr;
+        grid-template-areas: "titulo imagen"
+                             "parrafo imagen";
+    }
+}
+
+
+/*  ==> ==>  PÁGINA: MODOS  <== <== */
+/* Color de fondo de filas de Bootstrap modificados por rareza: Se utilizó each para iterar dentro de un map e interpolar una propiedad por ID. */
+@each $modo, $color in $lista_modos{
+    ##{$modo}{
+        background-color: $color;
+    }
+}
+#supervivencia,#noqueo, #cazadores, #voleibrawl {
+    p{
+        color: $negro;
+    } 
+}
+
+@media screen and (min-width: 768px) {
+    .tarjetas:hover {
+        cursor: pointer;
+        transform: scale(1.1, 1.1);
+    }
+}
+
+
+/* ==> ==>  PÁGINA: PERSONAJES  <== <==  */
+.nav-personajes{
+    @include col-flex;
+    justify-items: center;
+    align-items: center;
+    img{
+        height: 160px;
+    }
+    button{
+        width: calc(300px + 5vw);
+        font-weight: bold;
+    }
+}
+@media screen and (min-width: 480px) {
+    .nav-personajes{
+        img{
+            height: 220px;
+        }
+        button{
+            width: calc(300px + 10vw);
+        }
+        a:hover {
+            transform: scale(1.2, 1.1);
+        }
+    }
+}
+@media screen and (min-width:768px) {
+    .nav-personajes{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        justify-items: center;
+        align-items: center;
+        img{
+        height: 280px;
+        }
+        button{
+            width: calc(280px + 10vw);
+        }
+        a:hover {
+            transform: translate(50px, 0px);
+        }
+    }
+}
+
+/* Color de botones  de Bootstrap modificados por rareza: Se utilizó each para iterar dentro de un map e interpolar una propiedad por ID. */
+@each $boton, $color in $lista_botones{
+    .#{$boton}{
+        background-color: $color;
+    }
+}
+/* Color de texto de botones de Bootstrap modificados por criterio de diseño: Se utizó each para iterar dentro de un map e interpolar una propiedad por ID. */
+@each $boton, $colortexto in $lista_texto-boton{
+    .#{$boton}{
+        color: $colortexto !important;
+    }
+}
+
+.cartas{
+    justify-content: space-evenly;
+    margin:0
+}
+
+/* Color de fondo de filas de Bootstrap modificados por rareza: Se utilizó each para iterar dentro de un map e interpolar una propiedad por ID. */
+@each $rareza, $color in $lista_rarezas{
+    ##{$rareza}{
+        background-color: $color;
+    }
+}
+/* Propiedades cambiadas de cards de Bootstraps por criterio de diseño */
+#epicos{
+    .text-bg-secondary{
+        background-color: $violeta !important;
+    }
+}
+#miticos{
+    h3{
+        color: $rojo_oscuro;
+    }
+    h2{
+        text-shadow: 3px 2px 2px $negro;
+    }
+}
+#legendarios{
+    h2{
+        color: $naranja_oscuro;
+        text-shadow: 3px 2px 2px $rojo_oscuro;
+    }
+    h3{
+        text-shadow: .5px 1px 1px $negro;
+    }
+}
+#superespeciales{
+    .text-bg-primary{
+        background-color: $azul!important;
+    }
+}
+#cromaticos{
+    .text-bg-dark{
+        background-color: $naranja!important;
+    }
+}
+#comunes, #legendarios, #cromaticos {
+    p{
+        color: $negro;
+    }
+}
+
+/* Botones Bootstrap de retorno al nav-personajes */
+.boton-retorno{
+    grid-template-columns: 100%;
+    justify-content: center;
+    font-size: 14px;
+    .btn{
+        width: 100%;
+    }
+}
+.btn-light{
+    font-family: $fuente_cuadrada;
+    background-color: $negro;
+    color: $blanco;
+    border: none;
+}
+
+
+/* ==> ==>  PÁGINA: INFO  <== <== */
+#main-info{
+    background-image: linear-gradient(to right, $negro, $rojo);
+    h2{
+        text-align: center;
+    }
+}
+#info__tabla{
+    @include col-flex;
+    padding-bottom: 4%;
+}
+table{
+    background-color: $rojo_claro;
+    border-radius: 14px;
+    margin: 0px 5%;
+    font-size: 18px;
+    box-shadow: 5px 5px 30px $ambar;
+}
+.titulo-tabla{
+    color: $blanco;
+    text-shadow: 2px 1px 2px $gris;
+    text-align: right;
+    padding-right: 20px;
+    border-bottom: 2px solid $rojo_oscuro;
+}
+.descripcion-tabla{
+    color: $rojo_oscuro;
+    padding-left: 20px;
+    border-bottom: 1px solid $blanco;
+}
+#info__imagen{
+    @include col-flex;
+}
+#faqs--contenedor{
+    margin: auto 5px;
+}
+.preguntas p{   
+        margin-bottom: 10px !important;
+        &:last-of-type{
+            margin-bottom: 0 !important;
+        }
+}
+@media screen and (min-width:480px){
+    table{
+        font-size: 20px;
+    }
+}
+@media screen and (min-width: 768px){
+    #main-info{
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        grid-template-rows: repeat (2, auto);
+        grid-template-areas: "a1 a2"
+                             "a3 a3";
+        align-items: center;
+                            
+    }
+    #info__tabla{
+        grid-area: a1;
+        margin: 40px 80px;
+        align-content: center;
+    }
+    table{
+        font-size: 22px;
+    }
+    #info__imagen{
+        grid-area: a2;
+    }
+    #info__faqs{
+        grid-area: a3;
+    }
+    #faqs--contenedor{
+        padding: 10px 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+    }
+    .preguntas{
+        margin: 10px auto;
+    }
+}
+
+
+/* ==> ==>  PÁGINA: CONTACTO  <== <== */
+#main-contacto{
+    background-image: linear-gradient(to bottom, $violeta_oscuro, $rojo_claro);
+    padding-bottom: 20px;
+}
+#contacto__comunidad{
+    @include col-flex;
+    padding: 0 10px;
+    h2{
+    text-align: center;
+        span{
+            text-shadow: 3px 2px 2px $negro;
+        }
+    }
+    ul{
+        @include col-flex;
+        color: $blanco;
+        list-style: none;
+    }
+}
+
+#iconos--contenedor{
+    display: flex;
+    justify-content: center;
+}
+.iconos-ok{
+    max-width: 60px;
+}
+#contacto__pictures{
+    @include col-flex;
+    padding-bottom: 10px;
+    img{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 480px) {
+    .iconos-ok{
+            max-width: 80px;
+    }
+}
+@media screen and (min-width: 768px) {
+    
+    #main-contacto{
+        display: grid;
+        grid-template-columns: 38% 62%;
+        grid-template-areas: "a1 a2"
+                             "a3 a3";
+    }
+    #contacto__comunidad{
+        grid-area: a1;
+        justify-content: space-evenly;
+    }
+    #contacto__pictures{
+        grid-area: a2;
+    }
+    .iconos-ok{
+        max-width: 100px
+    }
+}
+
+/* Formulario */
+form{
+    grid-area: a3;
+    background-color: $lima;
+    box-shadow: 5px 5px 25px $blanco;
+    margin: auto 20px;
+    border-radius: 20px;
+}
+fieldset{
+    color: $violeta_oscuro;
+    border: 2px solid $violeta_oscuro;
+    border-radius: 20px;
+}
+legend{
+    font-size: 20px;
+    text-align: center;
+    color: $amarillo;
+    background-color: $violeta;
+    text-shadow: 2px 1px 2px $negro;
+    padding: 4px 20px;
+    border: 2px solid $violeta_oscuro;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+#campos-formulario{
+    @include col-flex;
+    width: 95%;
+    padding-left: 5%;
+}
+.campos{
+    @include col-flex;
+    margin-bottom: 10px;
+}
+label{     
+    text-align: center;
+}
+input, textarea{
+    border: 2px solid $violeta;
+}
+select{
+    border: 2px solid $violeta;
+}
+#boton{
+    font-family: $fuente_cuadrada;
+    color: $negro;
+    text-align: center;
+    padding: 10px 30px;
+    border: 2px dashed $negro;
+    &:hover {
+        cursor: pointer;
+    }
+}
+@media screen and (min-width: 480px) {
+    form{
+        margin: auto 40px;
+    }
+    label{     
+        text-align: left;
+    }
+    #boton{
+        width: 50%;
+        margin-left: 25%;
+    }
+}
+@media screen and (min-width: 768px) {
+    form{
+        margin: auto 100px;
+    }
+    .campos{
+        display: flex;
+        margin-bottom: 10px;
+    }
+    label{
+        padding-left: 20px;
+    }
+    input, textarea{
+        border: 2px solid $violeta;
+    }
+    #boton{
+        width: 25%;
+        margin-left: 75%;
+    }
+}
+

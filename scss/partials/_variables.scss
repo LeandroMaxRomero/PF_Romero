@@ -1,0 +1,79 @@
+
+/* Fuentes */
+$fuente_titulo: 'Nougat', 'Lilita One', sans-serif;
+$fuente_subtitulos: 'Lilita One', sans-serif, Verdana;
+$fuente_parrafos: 'Krub', sans-serif;
+$fuente_cuadrada: 'Silkscreen', 'Arial Narrow Bold';
+
+
+/* Paleta de colores */
+$verde: #32C12C;
+$verde_claro: #87c735;
+$verde_azulado: #009888;
+$lima: #CDE000;
+$amarillo: #FEEF00;
+$ambar: #FFCD00;
+$naranja: #FF9A00;
+$naranja_oscuro: #FF5500;
+$rojo_oscuro: #910f09;
+$rojo: #D40C00;
+$rojo_claro: #EC4C32;
+$violeta: #7F4FC9;
+$violeta_oscuro: #682CBF;
+$indigo:#3E49BB;
+$azul: #526EFF;
+$azul_claro: #00A5F9;
+$cyan: #00BCD9;
+$marron: #50342C;
+$gris: #9E9E9E;
+$gris_azulado: #5F7D8E;
+$blanco: #FFFFFF;
+$negro: #000000;
+
+
+/* Map colores background modos de juego*/
+$lista_modos: ("atrapagemas": $violeta,
+               "supervivencia": $verde_claro,
+               "balon_brawl": $azul,
+               "restringida": $rojo_claro,
+               "noqueo": $naranja,
+               "brawloncesto": $azul_claro,
+               "voleibrawl": $verde,
+               "cazadores": $ambar,
+               "irrupcion": $rojo,
+               "destruccion": $violeta_oscuro,
+               "agarra_trofeo": $marron,
+               "asedio": $gris_azulado,
+               "megabrawl": $rojo_oscuro,
+               "pelea_robotica": $verde_azulado);
+
+
+/* Map colores background de botones - menú de personajes */
+$lista_botones: ("btn-info": $azul_claro,
+                 "btn-success": $verde,
+                 "btn-primary": $indigo,
+                 "btn-secondary": $violeta_oscuro,
+                 "btn-danger": $rojo,
+                 "btn-warning": $ambar,
+                 "btn-dark": $naranja_oscuro);
+
+
+/* Map colores letra de botones - menú personajes */
+$lista_texto_boton: ("btn-info": $indigo,
+                     "btn-success": $marron,
+                     "btn-primary": $cyan,
+                     "btn-secondary": $gris,
+                     "btn-danger": $naranja,
+                     "btn-warning": $naranja_oscuro,
+                     "btn-dark": $violeta_oscuro);
+
+                     
+/* Map colores cards personajes por categoría */
+$lista_rarezas: ("comunes": $azul_claro,
+                 "especiales": $verde,
+                 "superespeciales": $indigo,
+                 "epicos": $violeta_oscuro,
+                 "miticos": $rojo,
+                 "legendarios": $ambar,
+                 "cromaticos": $naranja_oscuro);
+
