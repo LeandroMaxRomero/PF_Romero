@@ -369,6 +369,10 @@ iframe{
 
 
 /* ==> ==>  PÁGINA: PERSONAJES  <== <==  */
+/* Se quita la propiedad "position: sticky" del header para facilitar la usabilidad del nav-personajes */
+#header--no_sticky{
+    position: static;
+}
 .nav-personajes{
     @include col-flex;
     justify-items: center;
