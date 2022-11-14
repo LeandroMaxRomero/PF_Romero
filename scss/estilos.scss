@@ -5,6 +5,7 @@
 *{
     margin:0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 
@@ -39,6 +40,7 @@ header{
     z-index: 10;
     top: 0px;
 }
+
 #encabezado{
     @include col-flex;
     align-items: center;
@@ -359,6 +361,15 @@ iframe{
         color: $negro;
     } 
 }
+.tarjetas{
+    .card{
+        .card-body{
+            @include col-flex;
+            justify-content: space-around;
+        }
+        min-height: 500px;
+    }
+}
 
 @media screen and (min-width: 768px) {
     .tarjetas:hover {
@@ -422,16 +433,12 @@ iframe{
         background-color: $color;
     }
 }
+
 /* Color de texto de botones de Bootstrap modificados por criterio de diseño: Se utizó each para iterar dentro de un map e interpolar una propiedad por ID. */
 @each $boton, $colortexto in $lista_texto-boton{
     .#{$boton}{
         color: $colortexto !important;
     }
-}
-
-.cartas{
-    justify-content: space-evenly;
-    margin:0
 }
 
 /* Color de fondo de filas de Bootstrap modificados por rareza: Se utilizó each para iterar dentro de un map e interpolar una propiedad por ID. */
@@ -440,6 +447,18 @@ iframe{
         background-color: $color;
     }
 }
+
+/* Disposición y estilo de las cards*/
+.cartas{
+    justify-content: space-evenly;
+    margin:0;
+    .card-body{
+        @include col-flex;
+        justify-content: space-between;
+        font-weight: bold;
+    }
+}
+
 /* Propiedades cambiadas de cards de Bootstraps por criterio de diseño */
 #epicos{
     .text-bg-secondary{
@@ -477,6 +496,19 @@ iframe{
     p{
         color: $negro;
     }
+}
+/* Botones de ESTADÍSTICAS */
+.ataque{
+    color: $rojo;
+}
+.defensa{
+    color: $verde;
+}
+.utilidad{
+    color: $azul;
+}
+.super{
+    color: $naranja_oscuro;
 }
 
 /* Botones Bootstrap de retorno al nav-personajes */
@@ -588,11 +620,15 @@ table{
     @include col-flex;
     padding: 0 10px;
     h2{
-        font-size: calc(28px + .5vw);
-        text-align: center;
-            span{
-                text-shadow: 3px 2px 2px $negro;
-            }
+    text-align: center;
+        span{
+            text-shadow: 3px 2px 2px $negro;
+        }
+    }
+    ul{
+        @include col-flex;
+        color: $blanco;
+        list-style: none;
     }
 }
 
@@ -668,8 +704,7 @@ legend{
     @include col-flex;
     margin-bottom: 10px;
 }
-label{    
-    font-weight: bold; 
+label{     
     text-align: center;
 }
 input, textarea{
