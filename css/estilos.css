@@ -8,6 +8,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* ==> ==> Tipografía <== <== */
@@ -424,6 +425,15 @@ iframe {
   color: #000000;
 }
 
+.tarjetas .card {
+  min-height: 500px;
+}
+.tarjetas .card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 @media screen and (min-width: 768px) {
   .tarjetas:hover {
     cursor: pointer;
@@ -536,11 +546,6 @@ iframe {
   color: #682CBF !important;
 }
 
-.cartas {
-  justify-content: space-evenly;
-  margin: 0;
-}
-
 /* Color de fondo de filas de Bootstrap modificados por rareza: Se utilizó each para iterar dentro de un map e interpolar una propiedad por ID. */
 #comunes {
   background-color: #00A5F9;
@@ -568,6 +573,18 @@ iframe {
 
 #cromaticos {
   background-color: #FF5500;
+}
+
+/* Disposición y estilo de las cards*/
+.cartas {
+  justify-content: space-evenly;
+  margin: 0;
+}
+.cartas .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: bold;
 }
 
 /* Propiedades cambiadas de cards de Bootstraps por criterio de diseño */
@@ -600,6 +617,23 @@ iframe {
 
 #comunes p, #legendarios p, #cromaticos p {
   color: #000000;
+}
+
+/* Botones de ESTADÍSTICAS */
+.ataque {
+  color: #D40C00;
+}
+
+.defensa {
+  color: #32C12C;
+}
+
+.utilidad {
+  color: #526EFF;
+}
+
+.super {
+  color: #FF5500;
 }
 
 /* Botones Bootstrap de retorno al nav-personajes */
@@ -720,11 +754,16 @@ table {
   padding: 0 10px;
 }
 #contacto__comunidad h2 {
-  font-size: calc(28px + 0.5vw);
   text-align: center;
 }
 #contacto__comunidad h2 span {
   text-shadow: 3px 2px 2px #000000;
+}
+#contacto__comunidad ul {
+  display: flex;
+  flex-direction: column;
+  color: #FFFFFF;
+  list-style: none;
 }
 
 #iconos--contenedor {
@@ -808,7 +847,6 @@ legend {
 }
 
 label {
-  font-weight: bold;
   text-align: center;
 }
 
