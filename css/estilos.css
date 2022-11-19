@@ -78,7 +78,7 @@ header {
   text-shadow: 3px 2px 2px #000000;
 }
 
-/* Menú desplegable utilizando dropdown de Bootstrap */
+/* Menú desplegable utilizando dropdown de Bootstrap (max-width: 480px) */
 .dropdown-center {
   display: flex;
   justify-content: center;
@@ -113,9 +113,9 @@ nav {
   display: none;
 }
 
-/* Barra de navegación vertical y horizontal */
+/* Barra de navegación vertical */
 @media screen and (min-width: 480px) {
-  /* ↓ Oculto el dropdown con propiedad "display:none" mientras se visualiza el navegador */
+  /* ↓ Oculto el dropdown con propiedad "display:none" */
   .dropdown-center {
     display: none;
   }
@@ -160,6 +160,7 @@ nav {
     text-shadow: 2px 1px 2px #D40C00;
   }
 }
+/* Barra de navegación horizontal */
 @media screen and (min-width: 768px) {
   #encabezado {
     flex-direction: row;
@@ -321,6 +322,7 @@ iframe {
   max-width: 100%;
 }
 
+/* Única página del sitio que tiene 3 breakpoints por motivos estéticos */
 @media screen and (min-width: 768px) {
   #main-index {
     display: grid;
@@ -375,7 +377,7 @@ iframe {
   }
 }
 /*  ==> ==>  PÁGINA: MODOS  <== <== */
-/* Color de fondo de filas de Bootstrap modificados por rareza: Se utilizó each para iterar dentro de un map e interpolar una propiedad por ID. */
+/* Color de fondo de filas de Bootstrap modificados por rareza: Se utilizó EACH para iterar dentro de un MAP e INTERPOLAR una propiedad por ID. */
 #atrapagemas {
   background-color: #7F4FC9;
 }
@@ -452,7 +454,7 @@ iframe {
   }
 }
 /* ==> ==>  PÁGINA: PERSONAJES  <== <==  */
-/* Se quita la propiedad "position: sticky" del header para facilitar la usabilidad del nav-personajes */
+/* Se quita la propiedad "position: sticky" del header para facilitar la usabilidad del contenedor "nav-personajes" */
 #header--no_sticky {
   position: static;
 }
@@ -499,7 +501,7 @@ iframe {
     transform: translate(50px, 0px);
   }
 }
-/* Color de botones  de Bootstrap modificados por rareza: Se utilizó each para iterar dentro de un map e interpolar una propiedad por ID. */
+/* Color de botones  de Bootstrap modificados por rareza: Se utilizó EACH para iterar dentro de un MAP e INTERPOLAR una propiedad por ID. */
 .btn-info {
   background-color: #00A5F9;
 }
@@ -528,7 +530,7 @@ iframe {
   background-color: #FF5500;
 }
 
-/* Color de texto de botones de Bootstrap modificados por criterio de diseño: Se utizó each para iterar dentro de un map e interpolar una propiedad por ID. */
+/* Color de texto de botones de Bootstrap modificados por criterio de diseño: Se utizó EACH para iterar dentro de un MAP e INTERPOLAR una propiedad por ID. */
 .btn-info {
   color: #3E49BB !important;
 }
@@ -557,7 +559,7 @@ iframe {
   color: #682CBF !important;
 }
 
-/* Color de fondo de filas de Bootstrap modificados por rareza: Se utilizó each para iterar dentro de un map e interpolar una propiedad por ID. */
+/* Color de fondo de rows de Bootstrap modificados por rareza: Se utilizó EACH para iterar dentro de un MAP e INTERPOLAR una propiedad por ID. */
 #comunes {
   background-color: #00A5F9;
 }
