@@ -295,14 +295,12 @@ aside {
   display: flex;
   flex-direction: column;
   background-color: #00A5F9;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .contenedor-aside {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   border-bottom: 4px solid #000000;
 }
 .contenedor-aside:last-of-type {
@@ -324,6 +322,10 @@ iframe {
 }
 
 @media screen and (min-width: 768px) {
+  #main-index {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
   .contenedor-inicio {
     display: grid;
     grid-template-rows: 0.2fr 2fr 1fr;
@@ -344,15 +346,24 @@ iframe {
   .contenedor-inicio p {
     grid-area: parrafo;
   }
+  .contenedor-aside {
+    padding: 10vh 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 950px) {
+  iframe {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+  }
 }
 @media screen and (min-width: 950px) {
-  #main-index {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-  }
   .contenedor-inicio {
     grid-template-rows: 0.2fr 0.75fr 2fr;
     grid-template-areas: "titulo" "parrafo" "imagen";
+  }
+  iframe {
+    aspect-ratio: none;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -620,6 +631,10 @@ iframe {
 }
 
 /* Botones de ESTADÍSTICAS */
+.estadisticas--fondo {
+  background-color: #000000;
+}
+
 .ataque {
   color: #D40C00;
 }
@@ -633,7 +648,7 @@ iframe {
 }
 
 .super {
-  color: #FF5500;
+  color: #FEEF00;
 }
 
 /* Botones Bootstrap de retorno al nav-personajes */
